@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+
+<body style="background-color: #363434e2;" onload="go()">
+
+    <script>
+        function go() {
+            // Array Destructuring
+            // order important
+
+            const arr = ["mustang", 'f-150', 'expedition'];
+            // const arr = [undefined, 'f-150', 'expedition'];
+
+            // old way
+            const car = arr[0];
+            const truck = arr[1];
+            const suv = arr[2];
+
+            // console.log(car);
+
+            // new way
+            // const [car,truck,bike] = arr;
+            // const [car="Empty",truck,bike] = arr;    // default value
+            // const [truck,car,bike] = arr;
+            // const [car,,bike] = arr;
+            // const [car,...rest] = arr;
+
+            // console.log(car);
+
+            /*****************************************/
+            // Object Destructuring
+            const course = {
+                cname: "React JS",
+                price: undefined,
+                teacher: "Rohit Singh Walia"
+            }
+
+            // OLD WAY
+            // console.log(course.cname);
+            // console.log(course["price"]);
+            // console.log(course.teacher);
+
+            // Default                 Rename
+            const { price = '0', cname, teacher: tutor } = course;
+
+            // console.log(cname);
+            // console.log(price);
+            // console.log(tutor);
+
+            // Nested Objects
+            const obj = {
+                parent: {
+                    child: "Rohit"
+                }
+            }
+
+            const { parent: { child } } = obj;
+
+            // console.log(child);
+
+
+            /*****************************************/
+
+            // Function ARGS
+            const user = {
+                id: 101,
+                name: "Walia Saab"
+            }
+
+            // old way
+            function greet(user) {
+                console.log("Hello " + user.name);
+            }
+
+
+            // new way
+            // const {name} = user;
+            // function greet2(user) {
+            //     console.log("Hello "+ name);
+            // }
+
+            // new way 2.0
+            function greet2({ name }) {
+                console.log("Hello " + name);
+            }
+
+            // function greet2({ name }) {
+            //     console.log("Hi ${name}");
+            // }
+
+
+            // greet2(user);
+
+
+            // Nested Objects
+            const obj2 = {
+                parent: {
+                    child: "Rohit"
+                }
+            }
+
+            // old way
+            // function namaste(obj2) {
+            //     console.log("Namaste "+ obj2.parent.child);
+            // }
+
+            // new way
+            function namaste({ parent: { child } }) {
+                console.log("Namaste " + child);
+            }
+
+
+            // namaste(obj2);
+
+        }
+    </script>
+
+</body>
+
+</html>

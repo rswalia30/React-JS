@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slice-Splice</title>
+</head>
+
+<body style="background-color: #363434e2;" onload="go()">
+
+    <script>
+        function go() {
+            // const arr = [1,2,3,4,5];
+            // const arr2 = new Array(10,20,30);
+
+            // arr.push(100);       // add last
+            // arr.pop();           // remove last
+            // arr.unshift(100);    // add first
+            // arr.shift();         // remove first
+
+            // console.log(arr);
+            // console.log(arr2);
+
+            // console.log(arr.includes(2));
+            // console.log(arr.indexOf(2));
+
+            // Slice / Splice
+            const arr = [1, 2, 3, 4, 5];
+
+            // console.log("Old = " + arr);
+            // const newArr = arr.slice(1, 3);   // last range Exclude
+            // console.log("Slice(1,3) = " + newArr);
+            // console.log("New = " + arr);
+
+            console.log("Old = " + arr);
+            const newArr = arr.splice(1, 3);     // last range Include
+            console.log("Splice(1,3) = " + newArr);
+            console.log("New = " + arr);
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator</title>
+</head>
+
+<body style="background-color: #363434e2;" onload="go()">
+
+    <script>
+        function go() {
+            const arr1 = [1, 2, 3];
+            const arr2 = [4, 5, 6];
+
+            // arr1.push(arr2);     // pus to existing array
+            // console.log(arr1);
+
+            // const newArr = arr1.concat(arr2);   // return new array
+            // console.log(newArr);
+
+            const newArr = [...arr1, ...arr2];      // Spread Operator
+            console.log(newArr);
+        }
+    </script>
+
+</body>
+
+</html>
