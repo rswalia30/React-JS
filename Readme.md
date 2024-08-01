@@ -1,4 +1,6 @@
-# Pending Topics (Javascript)
+# Namaste-React🚀
+
+## Pending Topics (Javascript)
 
 - Destructuring (copy note down) + Harry
 - Variables
@@ -7,7 +9,7 @@
 - Ternary Operator
 - this Keyword (Arrow Functions)
 
-# React
+## React
 
 - Namaste React (Talk is Cheap, show me the code)
 
