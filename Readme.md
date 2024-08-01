@@ -4,8 +4,8 @@
 
 <!-- - Destructuring (copy note down) + Harry -->
 <!-- - Variables -->
+<!-- - Modules (Harry) -->
 
-- Modules (Harry)
 - Map (Harry + Namaste)
 - Ternary Operator
 - this Keyword (Arrow Functions)
