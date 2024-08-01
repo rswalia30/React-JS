@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map, Filter, Reduce</title>
+</head>
+
+<body style="background-color: #363434e2;" onload="go()">
+
+    <script>
+        function go() {
+            // MAP
+            const arr = [10, 20, 30];
+            const newArr = arr.map((val, index, arr) => {
+                console.log(val + " " + index + " " + arr);
+                return val + index;
+            })
+            console.log(newArr);
+
+            // FILTER
+            const arr2 = [10, 20, 30, 5, 8, 1];
+            const newArr2 = arr2.filter((val) => {
+                return val < 10;
+            })
+            console.log(newArr2);
+
+            // REDUCE - reduces an array to single value
+            const arr3 = [1, 2, 3, 1, 2];
+            const newArr3 = arr3.reduce((v1, v2) => {
+                return v1 + v2;
+            })
+            console.log(newArr3);
+        }
+    </script>
+
+</body>
+
+</html>

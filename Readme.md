@@ -6,7 +6,7 @@
 <!-- - Variables -->
 <!-- - Modules (Harry) -->
 
-- Map (Harry + Namaste)
+- Map (Namaste)
 - Ternary Operator
 - this Keyword (Arrow Functions)
 
