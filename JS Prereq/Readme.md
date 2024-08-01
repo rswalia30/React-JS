@@ -15,4 +15,4 @@
 
 - Delta Course (Day 56 - 62)
 
-- Thapa Technical (No)
+- Thapa Technical
