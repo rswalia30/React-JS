@@ -25,6 +25,50 @@
 
             higherOrderFunction(callbackFunction);
 
+            // Example
+            const radius = [1, 2, 3, 4, 5];
+
+            function calculateArea(radius) {
+                const area = [];
+                for (var i = 0; i < radius.length; i++) {
+                    var ans = Math.PI * radius[i] * radius[i];
+                    area.push(ans);
+                }
+                return area;
+            }
+
+            function calculateCircumfrance(radius) {
+                const circum = [];
+                for (var i = 0; i < radius.length; i++) {
+                    var ans = 2 * Math.PI * radius[i];
+                    circum.push(ans);
+                }
+                return circum;
+            }
+
+            console.log(calculateArea(radius));
+            console.log(calculateCircumfrance(radius));
+
+            /******************* Optimize the code ********************************/
+            const area = (radius) => {
+                return Math.PI * radius * radius;
+            }
+
+            const circumfrance = (radius) => {
+                return 2 * Math.PI * radius;
+            }
+
+            const calculate = (radius, logic) => {
+                const ans = [];
+                for (var i = 0; i < radius.length; i++) {
+                    ans.push(logic(radius[i]));
+                }
+                return ans;
+            }
+
+            console.log(calculate(radius, area));
+            console.log(calculate(radius, circumfrance));
+
         }
     </script>
 
