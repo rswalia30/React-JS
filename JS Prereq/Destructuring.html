@@ -11,16 +11,25 @@
 
     <script>
         function go() {
+
+            // const [a,b] = arr;
+            // const {a,b} = obj;
+
             // Array Destructuring
             // order important
 
-            const arr = ["mustang", 'f-150', 'expedition'];
+            // const num = [1, 2, 3];
+            // const [a, ...rest] = num;
+            // console.log(rest);
+
+
+            // const arr = ["mustang", 'f-150', 'expedition'];
             // const arr = [undefined, 'f-150', 'expedition'];
 
             // old way
-            const car = arr[0];
-            const truck = arr[1];
-            const suv = arr[2];
+            // const car = arr[0];
+            // const truck = arr[1];
+            // const suv = arr[2];
 
             // console.log(car);
 
@@ -33,11 +42,20 @@
 
             // console.log(car);
 
+            const arr = [1, 2, 3];
+
+            function sum(v1, v2, v3) {
+                return v1 + v2 + v3;
+            }
+
+            // console.log(sum(1, 2, 3));
+            // console.log(sum(...arr));
+
             /*****************************************/
             // Object Destructuring
             const course = {
                 cname: "React JS",
-                price: undefined,
+                price: 999,     // undefined
                 teacher: "Rohit Singh Walia"
             }
 

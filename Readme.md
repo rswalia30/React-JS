@@ -2,8 +2,9 @@
 
 ## Pending Topics (Javascript)
 
-- Destructuring (copy note down) + Harry
-- Variables
+<!-- - Destructuring (copy note down) + Harry -->
+<!-- - Variables -->
+
 - Modules (Harry)
 - Map (Harry + Namaste)
 - Ternary Operator
