@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rswalia30/Namaste-React.git"
+    "url": "git+https://github.com/rswalia30/React-JS.git"
   },
   "author": "Rohit Singh Walia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rswalia30/Namaste-React/issues"
+    "url": "https://github.com/rswalia30/React-JS/issues"
   },
-  "homepage": "https://github.com/rswalia30/Namaste-React#readme",
+  "homepage": "https://github.com/rswalia30/React-JS#readme",
   "devDependencies": {
     "parcel": "^2.12.0",
     "process": "^0.11.10"
