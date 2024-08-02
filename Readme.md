@@ -12,9 +12,9 @@
 
 ## React
 
-- Namaste React (Talk is Cheap, show me the code)
+- Practice Swiggy Website
 
-  > continue Namaste 2.0 (Episode 5)
+- Namaste React (E5 - 50 mint)
 
 - Delta Course (Day 56 - 62)
 

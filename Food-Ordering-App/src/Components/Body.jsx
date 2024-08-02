@@ -1,5 +1,5 @@
 import { Card } from "./Card"
-import { resturantList } from "./Card"
+import resturantList from "../utils/mockData"
 
 export const Body = () => {
     return (
