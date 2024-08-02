@@ -53,6 +53,7 @@ export const resturantList = [
 ];
 
 
+// eslint-disable-next-line react/prop-types
 export const Card = ({ name, img, time, cusine, stars }) => {
     // console.log(props);
 
@@ -66,7 +67,8 @@ export const Card = ({ name, img, time, cusine, stars }) => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <h6>{time} mins</h6>
-                    {/* <p>{cusine.join(", ")}</p> */}
+                    {/* eslint-disable-next-line react/prop-types */}
+                    <p>{cusine.join(", ")}</p>
                     <h6>{stars} stars</h6>
                 </div>
             </div>
