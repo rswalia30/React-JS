@@ -5,9 +5,9 @@
 <!-- - Destructuring (copy note down) + Harry -->
 <!-- - Variables -->
 <!-- - Modules (Harry) -->
+<!-- - Map (Namaste) -->
+<!-- - Ternary Operator -->
 
-- Map (Namaste)
-- Ternary Operator
 - this Keyword (Arrow Functions)
 
 ## React
