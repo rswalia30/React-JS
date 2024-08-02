@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 // const chaskaCafe = {
 //     name: "Chaska Cafe",
 //     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/uxgpy3bwmc5rsojmtw43",
