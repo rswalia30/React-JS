@@ -77,7 +77,7 @@ const FunComp2 = () => <h1>Single Line in Arrow Function</h1>;
 // multiple lines
 const FunComp3 = () => (
   <div id="container">
-    <h1>I am h1 tag</h1>
+    <h1>I am h1 tag of FunComp3</h1>
   </div>
 );
 

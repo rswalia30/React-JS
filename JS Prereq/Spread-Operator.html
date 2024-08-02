@@ -22,6 +22,25 @@
 
             const newArr = [...arr1, ...arr2];      // Spread Operator
             console.log(newArr);
+
+            const person = {
+                name: "Rohit",
+                age: 23,
+                isSingle: false
+            }
+
+            // console.log(person.name);
+            // console.log(person.age);
+            // console.log(person.isSingle);
+
+            // Destructuring Object
+            const { name, age } = person;
+            // console.log(age);
+
+            // Same Object as Person but with different name
+            const person2 = { ...person, name: "Jacky" };
+            console.log(person2.name);
+
         }
     </script>
 
