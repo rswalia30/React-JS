@@ -3,12 +3,10 @@
 export const Footer = () => {
     return (
         <>
-            <footer className="text-center bg-body-tertiary footer fixed-bottom" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-                {/* Grid container */}
+            <footer className="text-center  d-flex flex-column " style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+
                 <div className="container pt-4">
-                    {/* Section: Social media */}
                     <section className="mb-4">
-                        {/* Facebook */}
                         <a
                             data-mdb-ripple-init
                             className="btn btn-link btn-floating btn-lg text-body m-1"
@@ -19,7 +17,6 @@ export const Footer = () => {
                             <i className="fab fa-facebook-f"></i>
                         </a>
 
-                        {/* Twitter */}
                         <a
                             data-mdb-ripple-init
                             className="btn btn-link btn-floating btn-lg text-body m-1"
@@ -30,7 +27,6 @@ export const Footer = () => {
                             <i className="fab fa-twitter"></i>
                         </a>
 
-                        {/* Google */}
                         <a
                             data-mdb-ripple-init
                             className="btn btn-link btn-floating btn-lg text-body m-1"
@@ -41,7 +37,6 @@ export const Footer = () => {
                             <i className="fab fa-google"></i>
                         </a>
 
-                        {/* Instagram */}
                         <a
                             data-mdb-ripple-init
                             className="btn btn-link btn-floating btn-lg text-body m-1"
@@ -52,7 +47,6 @@ export const Footer = () => {
                             <i className="fab fa-instagram"></i>
                         </a>
 
-                        {/* Linkedin */}
                         <a
                             data-mdb-ripple-init
                             className="btn btn-link btn-floating btn-lg text-body m-1"
@@ -63,7 +57,6 @@ export const Footer = () => {
                             <i className="fab fa-linkedin"></i>
                         </a>
 
-                        {/* Github */}
                         <a
                             data-mdb-ripple-init
                             className="btn btn-link btn-floating btn-lg text-body m-1"
@@ -74,9 +67,7 @@ export const Footer = () => {
                             <i className="fab fa-github"></i>
                         </a>
                     </section>
-                    {/* Section: Social media */}
                 </div>
-                {/* Grid container */}
 
                 {/* Copyright */}
                 <div className="text-center p-3">
