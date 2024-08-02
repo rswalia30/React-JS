@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map, Filter, Reduce</title>
+</head>
+
+<body style="background-color: #363434e2;" onload="go()">
+
+    <script>
+        function go() {
+            /************************ MAP ************************/
+            // const arr = [1, 2, 3, 4, 5];
+
+            const double = function (x) {
+                return x * 2;
+            }
+
+            //             HOF     Callback
+            // const newArr = arr.map(double);
+
+            // Pass function in parameter
+            // const newArr = arr.map(function (x) {
+            //     return x * 2;
+            // });
+
+            // Arrow Function
+            // const newArr = arr.map((x) => {
+            //     return x * 2;
+            // });
+
+            // Short hand
+            // const newArr = arr.map((x) => x * 2);
+
+            // console.log(newArr);
+
+            const binary = function (x) {
+                return x.toString(2);
+            }
+            // const newArr = arr.map(binary);
+            // const arr2 = arr.map((val) => val.toString(2));
+            // console.log(arr2);
+
+            /************************ FILTER ************************/
+            // const arr = [1, 2, 3, 4, 5];
+
+            const isOdd = function (x) {
+                return x % 2 != 0;
+            }
+
+            // const ans = arr.filter(isOdd);
+
+            // const ans = arr.filter(function (x) {
+            //     return x % 2 != 0;
+            // });
+
+            // const ans = arr.filter((x) => x % 2 != 0);
+
+            // console.log(ans);
+
+            /************************ REDUCE ************************/
+            // reduces an array to single value
+            const arr = [1, 2, 3, 4, 5];
+
+            // Sum of Array
+            // Basic Method
+            function findSum(arr) {
+                let sum = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i];
+                }
+                return sum;
+            }
+
+            // console.log(findSum(arr));
+
+            // Reduce Method
+            // const ans = arr.reduce(function (sum, curr) {
+            //     sum = sum + curr;
+            //     return sum;
+            // }, 0);  // 0 is initial value of sum
+
+            // console.log(ans);
+
+            // const ans = arr.reduce((v1, v2) => v1 + v2);
+            // console.log(ans);
+
+            // Maximum Element in Array
+            // const output = arr.reduce(function (max, curr) {
+            //     if (curr > max)
+            //         max = curr;
+            //     return max;
+            // }, 0);
+
+            // console.log(output);
+
+            /************************ TRICKY EAMPLES - MAP ************************/
+            // API
+            const users = [
+                { firstname: "Rohit", lastname: "Singh", age: 23 },
+                { firstname: "Akshay", lastname: "Saini", age: 43 },
+                { firstname: "Deepak", lastname: "Bawa", age: 28 },
+                { firstname: "Madhav", lastname: "Chouhan", age: 54 }
+            ];
+
+            // list of users with FullName
+            // ["Rohit Singh", "Akshay Saini", ...]
+
+            function fullName({ firstname, lastname }) {
+                return firstname + " " + lastname;
+            }
+
+            // const output = users.map(fullName);
+
+            // const output = users.map((x) => x.firstname + " " + x.lastname);
+
+            // console.log(output);
+
+            /***************** TRICKY EAMPLES - Chaining ************************/
+            // Find firstname of users whose age<30
+
+            // MAP+FILTER
+            // const output = users.filter((x) => x.age < 30).map((x) => x.firstname);
+
+            // REDUCE
+            // const output = users.reduce(function (acc, curr) {
+            //     if (curr.age < 30) {
+            //         acc.push(curr.firstname);
+            //     }
+            //     return acc;
+            // }, []);
+
+            // console.log(output);
+
+        }
+    </script>
+
+</body>
+
+</html>
