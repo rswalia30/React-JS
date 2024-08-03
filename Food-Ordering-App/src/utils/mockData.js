@@ -5,7 +5,7 @@ const resturantList = [
     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/uxgpy3bwmc5rsojmtw43",
     time: "60-65",
     cusine: ["Cafe", "Italian", "Chinese"],
-    stars: "4.3",
+    stars: "3.8",
   },
   {
     id: 102,
@@ -21,7 +21,7 @@ const resturantList = [
     img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/crncfqmsuosriqcrp9ez",
     time: "35-40",
     cusine: ["Cafe", "Italian", "Chinese"],
-    stars: "3.7",
+    stars: "3.9",
   },
 ];
 

@@ -5,7 +5,7 @@ export const Footer = () => {
         <>
             <footer className="text-center  d-flex flex-column " style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
 
-                <div className="container pt-4">
+                {/* <div className="container pt-4">
                     <section className="mb-4">
                         <a
                             data-mdb-ripple-init
@@ -67,14 +67,12 @@ export const Footer = () => {
                             <i className="fab fa-github"></i>
                         </a>
                     </section>
-                </div>
+                </div> */}
 
                 {/* Copyright */}
                 <div className="text-center p-3">
-                    © 2024 |
-                    <a className="text-body" href="https://mdbootstrap.com/" > Rohit Singh Walia</a>
+                    © 2024 | Rohit Singh Walia
                 </div>
-                {/* Copyright */}
             </footer>
         </>
     )
