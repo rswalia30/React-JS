@@ -78,7 +78,7 @@ export const Body = () => {
 
     // console.log("Body is going to render");
 
-    // Do something after rendering the Component
+    // Do something after Rendering the Component
     useEffect(() => {
         // console.log("After Rendering Component");
         fetchDataFromAPI();
@@ -88,7 +88,7 @@ export const Body = () => {
         const data = await fetch("http://localhost:8080/res");  // SpringBoot
         const json = await data.json();
         console.log(json);
-        setList(json);
+        setList(json);      // State Variable
     }
 
     // return Fake Page until API returns actual data
