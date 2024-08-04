@@ -22,9 +22,7 @@ export const Header = () => {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-
-                        {/* Links */}
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <a className="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
@@ -47,22 +45,23 @@ export const Header = () => {
                             </li>
                         </ul>
 
-                        <button className="btn btn-primary mx-4" onClick={() => {
-                            // btnName = "Logout";
-                            // console.log(btnName);
-
-                            // whenever state variable updates, React re-renders the Component
-                            // setBtn("Logout");
-
-                            btn === "Login" ? setBtn("Logout") : setBtn("Login");
-                        }}
+                        <button className="btn btn-primary mx-4"
+                            onClick={() => {
+                                // whenever state variable updates, React re-renders the Component
+                                // setBtn("Logout");
+                                btn === "Login" ? setBtn("Logout") : setBtn("Login");
+                            }}
                         >{btn}</button>
 
                         {/* Search */}
-                        <form className="d-flex">
-                            <input className="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+                        {/* <form className="d-flex"> */}
+                        {/* <input className="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search"
+                            onKeyUp={() => {
+                                let val = document.getElementById("search").value;
+                                console.log(val);
+                            }} />
+                        <button className="btn btn-outline-success">Search</button> */}
+                        {/* </form> */}
                     </div>
                 </div>
             </nav>

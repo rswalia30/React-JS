@@ -59,8 +59,19 @@ export const Body = () => {
 
     return (list.length === 0) ? <Shimmer /> : (
         <div className="container">
+
+            <div className="row">
+                <div className="col-md-8">
+                    <input type="search" className="form-control w-100 mt-3" />
+                </div>
+
+                <div className="col-md-4">
+                    <button className="btn btn-warning mt-3 w-100">Search</button>
+                </div>
+            </div>
+
             <button
-                className="btn btn-primary mt-3"
+                className="btn btn-success mt-3 "
                 onClick={() => {
                     const filteredList = list.filter(
                         (obj) => obj.stars > 4
@@ -70,6 +81,7 @@ export const Body = () => {
             >
                 Top Rated Restraunts
             </button>
+
 
             <div className="row">
                 {/* <Card resturantList={resturantList[0]} />
@@ -88,6 +100,7 @@ export const Body = () => {
                 {/* LOOP */}
                 {
                     // resturantList.map((resturant, index) => {
+
                     //     return <Card {...resturant} key={index} />
                     // })
 
