@@ -87,16 +87,16 @@ export const Body = () => {
     const fetchDataFromAPI = async () => {
         const data = await fetch("http://localhost:8080/res");  // SpringBoot
         const json = await data.json();
-        console.log(json);
-        setList(json);      // State Variable
+        // console.log(json);
+        setList(json);      // Update State Variable
     }
 
-    // return Fake Page until API returns actual data
-    if (list.length === 0) {
-        return <Shimmer />;
-    }
+    // Conditional Rendering : return Fake Page until API returns actual data
+    // if (list.length === 0) {
+    //     return <Shimmer />;
+    // }
 
-    return (
+    return (list.length === 0) ? <Shimmer /> : (
         <div className="container">
             <button
                 className="btn btn-primary mt-3"
