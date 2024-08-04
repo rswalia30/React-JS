@@ -1,0 +1,7 @@
+{
+  "reactSnippets.settings.prettierEnabled": true,
+  "eslint.format.enable": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  }
+}

@@ -27,10 +27,11 @@ export const Body = () => {
         }
     ];
 
-    // State Variable -> super powerful variable
-    // const [list, setList] = useState([]);             // Default Value : empty list
 
+    // Local State Variable -> super powerful variable
     const [list, setList] = useState(normalList);
+    const [searchText, setSearchText] = useState("");
+    // const [list, setList] = useState([]);             // Default Value : empty list
 
     // Array Destructuring
     // const arr = useState(list2);
@@ -40,7 +41,7 @@ export const Body = () => {
 
     /******************************** useEffect() Hook ************************************************ */
 
-    // console.log("Body is going to render");
+    console.log("Body is going to render");
 
     // Do something after Rendering the Component
     useEffect(() => { fetchDataFromAPI() }, []);
@@ -62,11 +63,21 @@ export const Body = () => {
 
             <div className="row">
                 <div className="col-md-8">
-                    <input type="search" className="form-control w-100 mt-3" />
+                    <input type="search"
+                        className="form-control w-100 mt-3"
+                        value={searchText}  // Local State Variable
+                        onChange={(e) => { setSearchText(e.target.value) }}
+                    />
                 </div>
 
                 <div className="col-md-4">
-                    <button className="btn btn-warning mt-3 w-100">Search</button>
+                    <button className="btn btn-warning mt-3 w-100"
+                        onClick={() => {
+                            console.log({ searchText })
+                        }}
+                    >
+                        Search
+                    </button>
                 </div>
             </div>
 
