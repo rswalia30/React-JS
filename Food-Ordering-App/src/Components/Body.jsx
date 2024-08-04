@@ -27,7 +27,7 @@ export const Body = () => {
         },
         {
             id: 103,
-            name: "Meaow Momo",
+            name: "Meaow Momo2 ",
             img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/76a05b39545d5a2bf80d6a3e3e46544a",
             time: "35-40",
             cusine: ["Cafe", "Italian", "Chinese"],
@@ -65,8 +65,8 @@ export const Body = () => {
     //     },
     // ]);
 
-    const [list, setList] = useState([]);
-    // const [list, setList] = useState(list2);
+    // const [list, setList] = useState([]);
+    const [list, setList] = useState(list2);
 
     // Array Destructuring
     // const arr = useState(list2);
@@ -85,7 +85,7 @@ export const Body = () => {
     }, []);
 
     const fetchDataFromAPI = async () => {
-        const data = await fetch("http://localhost:8080/res");
+        const data = await fetch("http://localhost:8080/res");  // SpringBoot
         const json = await data.json();
         console.log(json);
         setList(json);
@@ -141,7 +141,6 @@ export const Body = () => {
                         return <Card {...resturant} key={resturant.id} />
                     })
                 }
-
             </div>
         </div>
     )
