@@ -1,5 +1,24 @@
 # Namaste-React🚀
 
+# Practice Swiggy
+
+- Header
+- Body
+  > Cards
+  >
+  > > Mock Data (List)
+  >
+  > > > API Data (SpringBoot)
+  >
+  > > > > Top Rated Restruants (useState)
+  >
+  > > > > > API Data (useEffect + SpringBoot)
+  >
+  > > > > > > Shimmer
+  >
+  > > > > > > > Search Functionality (useState)
+- Footer
+
 ## Pending Topics (Javascript)
 
 <!-- - Destructuring (copy note down) + Harry -->
@@ -12,9 +31,7 @@
 
 ## React
 
-- Practice Swiggy Website
-
-- Namaste React (E5 - 50 mint)
+- Namaste React (E7)
 
 - Delta Course (Day 56 - 62)
 
