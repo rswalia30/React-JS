@@ -63,7 +63,7 @@ export const Card = ({ name, img, time, cusine, stars }) => {
     // const { name, img, time, cusine, stars } = resturantList;
 
     return (
-        <div className="col-sm-4 my-3">
+        <div className="col-sm-3 my-3">
             <div className="card" >
                 <img src={img} className="card-img-top img-thumbnail" style={{ aspectRatio: "3/2" }} alt="card-image" />
                 <div className="card-body">
