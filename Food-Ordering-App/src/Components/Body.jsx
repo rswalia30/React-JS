@@ -61,6 +61,7 @@ export const Body = () => {
     return (list.length === 0) ? <Shimmer /> : (
         <div className="container">
 
+            {/* Search Functionality */}
             <div className="row">
                 <div className="col-md-8">
                     <input type="search"
@@ -74,6 +75,9 @@ export const Body = () => {
                     <button className="btn btn-warning mt-3 w-100"
                         onClick={() => {
                             console.log({ searchText })
+
+                            const filteredRes = list.filter((res) => res.name.toLowerCase().includes(searchText.toLowerCase()));
+                            setList(filteredRes);
                         }}
                     >
                         Search
@@ -81,12 +85,11 @@ export const Body = () => {
                 </div>
             </div>
 
+            {/* Top Rated Restraunts */}
             <button
                 className="btn btn-success mt-3 "
                 onClick={() => {
-                    const filteredList = list.filter(
-                        (obj) => obj.stars > 4
-                    );
+                    const filteredList = list.filter((obj) => obj.stars > 4);
                     setList(filteredList);
                 }}
             >
