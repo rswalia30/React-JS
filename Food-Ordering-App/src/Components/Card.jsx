@@ -65,12 +65,13 @@ export const Card = ({ name, img, time, cusine, stars }) => {
     return (
         <div className="col-sm-4 my-3">
             <div className="card" >
-                <img src={img} className="card-img-top img-thumbnail" alt="card-image" />
+                <img src={img} className="card-img-top img-thumbnail" style={{ aspectRatio: "3/2" }} alt="card-image" />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <h6>{time} mins</h6>
                     {/* eslint-disable-next-line react/prop-types */}
-                    <p>{cusine.join(", ")}</p>
+                    {/* <p>{cusine.join(", ")}</p> */}
+                    <p>{cusine}</p>
                     <h6>{stars} stars</h6>
                 </div>
             </div>
