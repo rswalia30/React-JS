@@ -30,7 +30,7 @@ export const Body = () => {
 
     // Local State Variable -> super powerful variable
     const [list, setList] = useState(normalList);
-    const [searchText, setSearchText] = useState("");
+    const [searchtext, setSearchText] = useState("");
     // const [list, setList] = useState([]);             // Default Value : empty list
 
     // Array Destructuring
@@ -62,18 +62,17 @@ export const Body = () => {
         <div className="container">
 
             <div className="row">
-                {/* Search Functionality */}
-                <div className="col-md-8">
-                    <input type="search"
-                        className="form-control w-100 mt-3"
+                <div className="col-md-8 mt-3">
+                    <input type="text"
+                        className="form-control"
                         placeholder="Search"
-                        // bind local State variable with searchfield
-                        value={searchText}
+                        // bind input text with State Variable
+                        value={searchtext}
                         onChange={(e) => { setSearchText(e.target.value) }}
+                        // Filter Cards
                         onKeyUp={() => {
-                            // console.log(searchText);
                             const filteredList2 = list.filter(
-                                (res) => res.name.toLowerCase().includes(searchText.toLowerCase())
+                                (res) => res.name.toLowerCase().includes(searchtext.toLowerCase())
                             )
                             setList(filteredList2);
                         }}
@@ -129,3 +128,23 @@ export const Body = () => {
         </div>
     );
 }
+
+
+
+// {/* Search Functionality */}
+// <div className="col-md-8">
+// <input type="search"
+//     className="form-control w-100 mt-3"
+//     placeholder="Search"
+//     // bind local State variable with searchfield
+//     value={searchText}
+//     onChange={(e) => { setSearchText(e.target.value) }}
+//     // Filter Logic
+//     onKeyUp={() => {
+//         const filteredList2 = list.filter(
+//             (res) => res.name.toLowerCase().includes(searchText.toLowerCase())
+//         )
+//         setList(filteredList2);
+//     }}
+// />
+// </div>
