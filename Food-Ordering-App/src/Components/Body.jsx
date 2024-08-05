@@ -1,12 +1,10 @@
 /* eslint-disable no-import-assign */
-import { Card } from "./Card"
-// import resturantList from "../utils/mockData"
+import Card from "./Card"
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 
-export const Body = () => {
+const Body = () => {
 
-    /******************************** useState() Hook ************************************************ */
     // Normal JS variable
     let normalList = [
         {
@@ -27,11 +25,13 @@ export const Body = () => {
         }
     ];
 
+    // const [list, setList] = useState([]);             // Default Value : empty list
+    /******************************** useState() Hook ************************************************ */
 
     // Local State Variable -> super powerful variable
-    const [list, setList] = useState(normalList);
+    const [list, setList] = useState(normalList);           // original : 14 items
+    const [filteredList, setFilteredList] = useState(list); // copy : 14 items
     const [searchtext, setSearchText] = useState("");
-    // const [list, setList] = useState([]);             // Default Value : empty list
 
     // Array Destructuring
     // const arr = useState(list2);
@@ -41,27 +41,25 @@ export const Body = () => {
 
     /******************************** useEffect() Hook ************************************************ */
 
-    console.log("Body is going to render");
-
     // Do something after Rendering the Component
     useEffect(() => { fetchDataFromAPI() }, []);
 
+    // SpringBoot
     const fetchDataFromAPI = async () => {
         const data = await fetch("http://localhost:8080/res");  // SpringBoot
         const json = await data.json();
         // console.log(json);
-        setList(json);      // Update State Variable
+        setList(json);              // Update State Variable - original
+        setFilteredList(json);      // Update State Variable - copy
     }
 
-    // Conditional Rendering : return Fake Page until API returns actual data
-    // if (list.length === 0) {
-    //     return <Shimmer />;
-    // }
+    console.log("Body is going to render");
 
+    /******************************** Main Body  ************************************************ */
     return (list.length === 0) ? <Shimmer /> : (
         <div className="container">
-
             <div className="row">
+                {/* Search Functionality */}
                 <div className="col-md-8 mt-3">
                     <input type="text"
                         className="form-control"
@@ -74,7 +72,7 @@ export const Body = () => {
                             const filteredList2 = list.filter(
                                 (res) => res.name.toLowerCase().includes(searchtext.toLowerCase())
                             )
-                            setList(filteredList2);
+                            setFilteredList(filteredList2);
                         }}
                     />
                 </div>
@@ -85,7 +83,8 @@ export const Body = () => {
                         className="btn btn-success mt-3 w-100"
                         onClick={() => {
                             const filteredList = list.filter((obj) => obj.stars > 4);
-                            setList(filteredList);
+                            setFilteredList(filteredList);
+                            // setList(filteredList);
                         }}
                     >
                         Top Rated Restraunts
@@ -93,7 +92,7 @@ export const Body = () => {
                 </div>
             </div>
 
-
+            {/* Render Cards */}
             <div className="row">
                 {/* <Card resturantList={resturantList[0]} />
                 <Card resturantList={resturantList[1]} />
@@ -120,31 +119,19 @@ export const Body = () => {
                     // })
 
                     // list - State Variable
-                    list.map((resturant) => {
-                        return <Card {...resturant} key={resturant.id} />
-                    })
+                    // list.map((resturant) => {
+                    //     return <Card {...resturant} key={resturant.id} />
+                    // })
+
+                    (filteredList.length === 0) ? <Shimmer /> : filteredList.map(
+                        (res) => {
+                            return <Card {...res} key={res.id} />
+                        }
+                    )
                 }
             </div>
         </div>
     );
 }
 
-
-
-// {/* Search Functionality */}
-// <div className="col-md-8">
-// <input type="search"
-//     className="form-control w-100 mt-3"
-//     placeholder="Search"
-//     // bind local State variable with searchfield
-//     value={searchText}
-//     onChange={(e) => { setSearchText(e.target.value) }}
-//     // Filter Logic
-//     onKeyUp={() => {
-//         const filteredList2 = list.filter(
-//             (res) => res.name.toLowerCase().includes(searchText.toLowerCase())
-//         )
-//         setList(filteredList2);
-//     }}
-// />
-// </div>
+export default Body;

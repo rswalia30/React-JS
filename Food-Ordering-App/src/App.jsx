@@ -9,7 +9,7 @@
 // export default App;
 
 /*
-  Header
+  Navbar
     - logo
     - nav links
     - cart
@@ -28,14 +28,14 @@
     - links
 */
 
-import { Header } from "./Components/Header"
-import { Body } from "./Components/Body"
-import { Footer } from "./Components/Footer"
+import Navbar from "./Components/Navbar"
+import Body from "./Components/Body"
+import Footer from "./Components/Footer"
 
 export const App = () => {
   return (
     <>
-      <Header />
+      <Navbar />
       <Body />
       <Footer />
     </>

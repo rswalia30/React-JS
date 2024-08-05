@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const Header = () => {
+const Navbar = () => {
 
     // normal JS variable
     // let btnName = "Login";
@@ -69,3 +69,5 @@ export const Header = () => {
         </>
     )
 }
+
+export default Navbar;

@@ -1,6 +1,6 @@
 // import React from 'react';
 
-export const Footer = () => {
+const Footer = () => {
     return (
         <>
             <footer className="text-center  d-flex flex-column " style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
@@ -77,3 +77,5 @@ export const Footer = () => {
         </>
     )
 }
+
+export default Footer;
