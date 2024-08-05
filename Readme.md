@@ -1,6 +1,6 @@
 # Namaste-React🚀
 
-# Practice Swiggy
+<!-- # Practice Swiggy
 
 - Header
 - Body
@@ -17,7 +17,7 @@
   > > > > > > Shimmer
   >
   > > > > > > > Search Functionality (useState)
-- Footer
+- Footer -->
 
 ## Pending Topics (Javascript)
 

@@ -61,40 +61,38 @@ export const Body = () => {
     return (list.length === 0) ? <Shimmer /> : (
         <div className="container">
 
-            {/* Search Functionality */}
             <div className="row">
+                {/* Search Functionality */}
                 <div className="col-md-8">
                     <input type="search"
                         className="form-control w-100 mt-3"
-                        value={searchText}  // Local State Variable
+                        placeholder="Search"
+                        // bind local State variable with searchfield
+                        value={searchText}
                         onChange={(e) => { setSearchText(e.target.value) }}
+                        onKeyUp={() => {
+                            // console.log(searchText);
+                            const filteredList2 = list.filter(
+                                (res) => res.name.toLowerCase().includes(searchText.toLowerCase())
+                            )
+                            setList(filteredList2);
+                        }}
                     />
                 </div>
 
+                {/* Top Rated Restraunts */}
                 <div className="col-md-4">
-                    <button className="btn btn-warning mt-3 w-100"
+                    <button
+                        className="btn btn-success mt-3 w-100"
                         onClick={() => {
-                            console.log({ searchText })
-
-                            const filteredRes = list.filter((res) => res.name.toLowerCase().includes(searchText.toLowerCase()));
-                            setList(filteredRes);
+                            const filteredList = list.filter((obj) => obj.stars > 4);
+                            setList(filteredList);
                         }}
                     >
-                        Search
+                        Top Rated Restraunts
                     </button>
                 </div>
             </div>
-
-            {/* Top Rated Restraunts */}
-            <button
-                className="btn btn-success mt-3 "
-                onClick={() => {
-                    const filteredList = list.filter((obj) => obj.stars > 4);
-                    setList(filteredList);
-                }}
-            >
-                Top Rated Restraunts
-            </button>
 
 
             <div className="row">
