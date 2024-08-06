@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-import-assign */
 import Card from "./Card"
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+// import { SWIGGY_API } from "../utils/constants";
 
 const Body = () => {
 
@@ -42,22 +44,23 @@ const Body = () => {
     /******************************** useEffect() Hook ************************************************ */
 
     // Do something after Rendering the Component
-    useEffect(() => {
-        console.log("useEffect called")
-    }, [searchtext]);
+    // useEffect(() => {
+    //     console.log("useEffect called")
+    // }, [searchtext]);
 
-    useEffect(() => { fetchDataFromAPI() }, []);
+    // useEffect(() => { fetchDataFromAPI() }, []);
 
     // SpringBoot
-    const fetchDataFromAPI = async () => {
-        const data = await fetch("http://localhost:8080/res");  // SpringBoot
-        const json = await data.json();
-        // console.log(json);
-        setList(json);              // Update State Variable - original
-        setFilteredList(json);      // Update State Variable - copy
-    }
+    // const fetchDataFromAPI = async () => {
+    //     // const data = await fetch("http://localhost:8080/res");  // SpringBoot
+    //     const data = await fetch(SWIGGY_API);  // Swiggy API
+    //     const json = await data.json();
+    //     console.log(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants[0]?.info);
+    //     setList(json);              // Update State Variable - original
+    //     setFilteredList(json);      // Update State Variable - copy
+    // }
 
-    console.log("Body is going to render");
+    // console.log("Body is going to render");
 
     /******************************** Main Body  ************************************************ */
     return (list.length === 0) ? <Shimmer /> : (
@@ -110,6 +113,7 @@ const Body = () => {
                 {/* <Card {...resturantList[0]} />
                 <Card {...resturantList[1]} />
                 <Card {...resturantList[2]} /> */}
+
 
                 {/* LOOP */}
                 {
