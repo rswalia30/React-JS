@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -23,12 +24,19 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <li className="nav-item mx-2 my-2">
+                                {/* <a className="nav-link active" href="/">Home</a> */}
+                                <Link to="/">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">About</a>
+                            <li className="nav-item mx-2 my-2">
+                                {/* <a className="nav-link" href="/about">About</a> */}
+                                <Link to="/about">About</Link>
                             </li>
+                            <li className="nav-item mx-2 my-2">
+                                {/* <a className="nav-link" href="/contact">Contact</a> */}
+                                <Link to="/contact">Contact</Link>
+                            </li>
+
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     City
@@ -52,16 +60,6 @@ const Navbar = () => {
                                 btn === "Login" ? setBtn("Logout") : setBtn("Login");
                             }}
                         >{btn}</button>
-
-                        {/* Search */}
-                        {/* <form className="d-flex"> */}
-                        {/* <input className="form-control me-2" id="search" type="search" placeholder="Search" aria-label="Search"
-                            onKeyUp={() => {
-                                let val = document.getElementById("search").value;
-                                console.log(val);
-                            }} />
-                        <button className="btn btn-outline-success">Search</button> */}
-                        {/* </form> */}
                     </div>
                 </div>
             </nav>
