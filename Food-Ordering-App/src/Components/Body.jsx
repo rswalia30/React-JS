@@ -42,6 +42,10 @@ const Body = () => {
     /******************************** useEffect() Hook ************************************************ */
 
     // Do something after Rendering the Component
+    useEffect(() => {
+        console.log("useEffect called")
+    }, [searchtext]);
+
     useEffect(() => { fetchDataFromAPI() }, []);
 
     // SpringBoot
@@ -53,7 +57,7 @@ const Body = () => {
         setFilteredList(json);      // Update State Variable - copy
     }
 
-    // console.log("Body is going to render");
+    console.log("Body is going to render");
 
     /******************************** Main Body  ************************************************ */
     return (list.length === 0) ? <Shimmer /> : (
