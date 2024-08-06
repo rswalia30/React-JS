@@ -53,7 +53,7 @@ const Body = () => {
         setFilteredList(json);      // Update State Variable - copy
     }
 
-    console.log("Body is going to render");
+    // console.log("Body is going to render");
 
     /******************************** Main Body  ************************************************ */
     return (list.length === 0) ? <Shimmer /> : (
