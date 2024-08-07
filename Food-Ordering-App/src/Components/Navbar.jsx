@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -26,15 +27,30 @@ const Navbar = () => {
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item mx-2 my-2">
                                 {/* <a className="nav-link active" href="/">Home</a> */}
-                                <Link to="/">Home</Link>
+                                {/* <Link to="/">Home</Link> */}
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive }) => isActive ? "text-warning" : "text-white"}
+                                >Home
+                                </NavLink>
                             </li>
                             <li className="nav-item mx-2 my-2">
                                 {/* <a className="nav-link" href="/about">About</a> */}
-                                <Link to="/about">About</Link>
+                                {/* <Link to="/about">About</Link> */}
+                                <NavLink
+                                    to="/about"
+                                    className={({ isActive }) => isActive ? "text-warning" : "text-white"}
+                                >About
+                                </NavLink>
                             </li>
                             <li className="nav-item mx-2 my-2">
                                 {/* <a className="nav-link" href="/contact">Contact</a> */}
-                                <Link to="/contact">Contact</Link>
+                                {/* <Link to="/contact">Contact</Link> */}
+                                <NavLink
+                                    to="/contact"
+                                    className={({ isActive }) => isActive ? "text-warning" : "text-white"}
+                                >Contact
+                                </NavLink>
                             </li>
 
                             <li className="nav-item dropdown">
