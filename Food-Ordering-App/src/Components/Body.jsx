@@ -2,9 +2,10 @@
 /* eslint-disable no-import-assign */
 import Card from "./Card"
 import { useState } from "react";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import Shimmer from "./Shimmer";
-// import { SWIGGY_API } from "../utils/constants";
+import { SWIGGY_API } from "../utils/constants";
+import { CLOUDINARY_IMG_URL } from "../utils/constants";
 
 const Body = () => {
 
@@ -13,7 +14,7 @@ const Body = () => {
         {
             id: 101,
             name: "Chaska Cafe",
-            img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/uxgpy3bwmc5rsojmtw43",
+            img: CLOUDINARY_IMG_URL + "/uxgpy3bwmc5rsojmtw43",
             time: "60-65",
             cusine: ["Cafe", "Italian", "Chinese"],
             stars: "3.8",
@@ -21,7 +22,7 @@ const Body = () => {
         {
             id: 102,
             name: "Gupta Bakery",
-            img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/76a05b39545d5a2bf80d6a3e3e46544a",
+            img: CLOUDINARY_IMG_URL + "/76a05b39545d5a2bf80d6a3e3e46544a",
             time: "20-25",
             cusine: ["Biscuits", "Ice-Cream", "Chinese"],
             stars: "4.6",
@@ -49,17 +50,36 @@ const Body = () => {
     //     console.log("useEffect called")
     // }, [searchtext]);
 
-    // useEffect(() => { fetchDataFromAPI() }, []);
+    useEffect(() => { fetchDataFromAPI() }, []);
 
     // SpringBoot
+    const fetchDataFromAPI = async () => {
+        // const data = await fetch("http://localhost:8080/res");   // SpringBoot
+        const data = await fetch(SWIGGY_API);                    // Swiggy API
+        const json = await data.json();
+        console.log(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);       // 25
+        const res = json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants || [];  // 24
+        setList(res);              // Update State Variable - original
+        setFilteredList(res);      // Update State Variable - copy
+    }
+
     // const fetchDataFromAPI = async () => {
-    //     // const data = await fetch("http://localhost:8080/res");  // SpringBoot
-    //     const data = await fetch(SWIGGY_API);  // Swiggy API
-    //     const json = await data.json();
-    //     console.log(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants[0]?.info);
-    //     setList(json);              // Update State Variable - original
-    //     setFilteredList(json);      // Update State Variable - copy
+    //     try {
+    //         const response = await fetch(SWIGGY_API); // Swiggy API
+    //         if (!response.ok) {
+    //             throw new Error(`HTTP error! status: ${response.status}`);
+    //         }
+    //         const json = await response.json();
+    //         console.log(json); // Log the entire response to check the structure
+    //         console.log(json.data.success.cards[4].gridWidget.gridElements.infoWithStyle.restaurants);  // CHECK IF IT IS CARDS[3] / CARDS[4]
+    //         const res = json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants || [];
+    //         setList(res);              // Update State Variable - original
+    //         setFilteredList(res);      // Update State Variable - copy
+    //     } catch (error) {
+    //         console.error("Failed to fetch data from API:", error);
+    //     }
     // }
+
 
     // console.log("Body is going to render");
 
@@ -78,7 +98,7 @@ const Body = () => {
                         // Filter Cards
                         onKeyUp={() => {
                             const filteredList2 = list.filter(
-                                (res) => res.name.toLowerCase().includes(searchtext.toLowerCase())
+                                (res) => res.info.name.toLowerCase().includes(searchtext.toLowerCase())
                             )
                             setFilteredList(filteredList2);
                         }}
@@ -90,7 +110,7 @@ const Body = () => {
                     <button
                         className="btn btn-success mt-3 w-100"
                         onClick={() => {
-                            const filteredList = list.filter((obj) => obj.stars > 4);
+                            const filteredList = list.filter((obj) => obj.info.avgRating > 4.6);
                             setFilteredList(filteredList);
                             // setList(filteredList);
                         }}
@@ -105,6 +125,13 @@ const Body = () => {
                 {/* <Card resturantList={resturantList[0]} />
                 <Card resturantList={resturantList[1]} />
                 <Card resturantList={resturantList[2]} /> */}
+
+                {
+                    filteredList.map(
+                        (obj, index) => { return <Card res={obj} key={index} /> }
+                        // (obj) => { return <Card res={obj} key={obj.info.id} /> }
+                    )
+                }
 
                 {/* We have to pass all properties(name,img,time,cusine,stars) */}
                 {/* <Card name={resturantList[0].name} img={resturantList[0].img} /> */}
@@ -132,11 +159,13 @@ const Body = () => {
                     //     return <Card {...resturant} key={resturant.id} />
                     // })
 
-                    (filteredList.length === 0) ? <Shimmer /> : filteredList.map(
-                        (res) => {
-                            return <Card {...res} key={res.id} />
-                        }
-                    )
+                    // (filteredList.length === 0) ?
+                    //     <Shimmer /> :
+                    //     filteredList.map(
+                    //         (res) => {
+                    //             return <Card {...res} key={res.id} />
+                    //         }
+                    //     )
                 }
             </div>
         </div>
