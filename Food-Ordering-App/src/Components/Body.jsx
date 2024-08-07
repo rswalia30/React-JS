@@ -5,35 +5,35 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { SWIGGY_API } from "../utils/constants";
-import { CLOUDINARY_IMG_URL } from "../utils/constants";
+// import { CLOUDINARY_IMG_URL } from "../utils/constants";
 
 const Body = () => {
 
     // Normal JS variable
-    let normalList = [
-        {
-            id: 101,
-            name: "Chaska Cafe",
-            img: CLOUDINARY_IMG_URL + "/uxgpy3bwmc5rsojmtw43",
-            time: "60-65",
-            cusine: ["Cafe", "Italian", "Chinese"],
-            stars: "3.8",
-        },
-        {
-            id: 102,
-            name: "Gupta Bakery",
-            img: CLOUDINARY_IMG_URL + "/76a05b39545d5a2bf80d6a3e3e46544a",
-            time: "20-25",
-            cusine: ["Biscuits", "Ice-Cream", "Chinese"],
-            stars: "4.6",
-        }
-    ];
+    // let normalList = [
+    //     {
+    //         id: 101,
+    //         name: "Chaska Cafe",
+    //         img: CLOUDINARY_IMG_URL + "/uxgpy3bwmc5rsojmtw43",
+    //         time: "60-65",
+    //         cusine: ["Cafe", "Italian", "Chinese"],
+    //         stars: "3.8",
+    //     },
+    //     {
+    //         id: 102,
+    //         name: "Gupta Bakery",
+    //         img: CLOUDINARY_IMG_URL + "/76a05b39545d5a2bf80d6a3e3e46544a",
+    //         time: "20-25",
+    //         cusine: ["Biscuits", "Ice-Cream", "Chinese"],
+    //         stars: "4.6",
+    //     }
+    // ];
 
     // const [list, setList] = useState([]);             // Default Value : empty list
     /******************************** useState() Hook ************************************************ */
 
     // Local State Variable -> super powerful variable
-    const [list, setList] = useState(normalList);           // original : 14 items
+    const [list, setList] = useState([]);           // original : 14 items
     const [filteredList, setFilteredList] = useState(list); // copy : 14 items
     const [searchtext, setSearchText] = useState("");
 
@@ -57,7 +57,8 @@ const Body = () => {
         // const data = await fetch("http://localhost:8080/res");   // SpringBoot
         const data = await fetch(SWIGGY_API);                    // Swiggy API
         const json = await data.json();
-        console.log(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);       // 25
+        // console.log(json);
+        // console.log(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);       // 25
         const res = json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants || [];  // 24
         setList(res);              // Update State Variable - original
         setFilteredList(res);      // Update State Variable - copy
@@ -127,10 +128,14 @@ const Body = () => {
                 <Card resturantList={resturantList[2]} /> */}
 
                 {
-                    filteredList.map(
-                        (obj, index) => { return <Card res={obj} key={index} /> }
-                        // (obj) => { return <Card res={obj} key={obj.info.id} /> }
-                    )
+                    (filteredList.length === 0) ? <Shimmer /> :
+                        filteredList.map(
+                            (obj, index) => {
+                                return <Card res={obj} key={index} />
+                                // console.log(obj?.info?.id);
+                                // return <Card res={obj} key={obj?.info?.id} />
+                            }
+                        )
                 }
 
                 {/* We have to pass all properties(name,img,time,cusine,stars) */}

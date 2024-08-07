@@ -3,8 +3,7 @@ const Shimmer = () => {
     return (
         <div className="container">
             <div className="row mt-4">
-
-                <div className="col-sm-3 my-3">
+                <div className="col-sm-3 my-5">
                     <div className="card" style={{ "height": "260px", "backgroundColor": "#e2e2e2" }}>
                         <div className="card-body">
                             <h5 className="card-title"></h5>
@@ -14,7 +13,7 @@ const Shimmer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-3 my-3">
+                <div className="col-sm-3 my-5">
                     <div className="card" style={{ "height": "260px", "backgroundColor": "#e2e2e2" }}>
                         <div className="card-body">
                             <h5 className="card-title"></h5>
@@ -24,7 +23,7 @@ const Shimmer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-3 my-3">
+                <div className="col-sm-3 my-5">
                     <div className="card" style={{ "height": "260px", "backgroundColor": "#e2e2e2" }}>
                         <div className="card-body">
                             <h5 className="card-title"></h5>
@@ -34,7 +33,7 @@ const Shimmer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-3 my-3">
+                <div className="col-sm-3 my-5">
                     <div className="card" style={{ "height": "260px", "backgroundColor": "#e2e2e2" }}>
                         <div className="card-body">
                             <h5 className="card-title"></h5>
@@ -44,7 +43,7 @@ const Shimmer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-3 my-3">
+                <div className="col-sm-3 my-5">
                     <div className="card" style={{ "height": "260px", "backgroundColor": "#e2e2e2" }}>
                         <div className="card-body">
                             <h5 className="card-title"></h5>
@@ -54,7 +53,7 @@ const Shimmer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-3 my-3">
+                <div className="col-sm-3 my-5">
                     <div className="card" style={{ "height": "260px", "backgroundColor": "#e2e2e2" }}>
                         <div className="card-body">
                             <h5 className="card-title"></h5>
@@ -64,7 +63,7 @@ const Shimmer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-3 my-3">
+                <div className="col-sm-3 my-5">
                     <div className="card" style={{ "height": "260px", "backgroundColor": "#e2e2e2" }}>
                         <div className="card-body">
                             <h5 className="card-title"></h5>
@@ -74,7 +73,7 @@ const Shimmer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-sm-3 my-3">
+                <div className="col-sm-3 my-5">
                     <div className="card" style={{ "height": "260px", "backgroundColor": "#e2e2e2" }}>
                         <div className="card-body">
                             <h5 className="card-title"></h5>
