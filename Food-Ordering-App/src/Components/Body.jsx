@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-import-assign */
 import Card from "./Card"
-import { useState, useEffect } from "react";
+import { useState } from "react";
+// import { useEffect } from "react";
 import Shimmer from "./Shimmer";
 // import { SWIGGY_API } from "../utils/constants";
 

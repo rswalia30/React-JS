@@ -30,7 +30,7 @@ const Navbar = () => {
                                 {/* <Link to="/">Home</Link> */}
                                 <NavLink
                                     to="/"
-                                    className={({ isActive }) => isActive ? "text-warning" : "text-white"}
+                                    className={({ isActive }) => isActive ? "text-warning text-decoration-none" : "text-white text-decoration-none"}
                                 >Home
                                 </NavLink>
                             </li>
@@ -39,7 +39,7 @@ const Navbar = () => {
                                 {/* <Link to="/about">About</Link> */}
                                 <NavLink
                                     to="/about"
-                                    className={({ isActive }) => isActive ? "text-warning" : "text-white"}
+                                    className={({ isActive }) => isActive ? "text-warning text-decoration-none" : "text-white text-decoration-none"}
                                 >About
                                 </NavLink>
                             </li>
@@ -48,7 +48,7 @@ const Navbar = () => {
                                 {/* <Link to="/contact">Contact</Link> */}
                                 <NavLink
                                     to="/contact"
-                                    className={({ isActive }) => isActive ? "text-warning" : "text-white"}
+                                    className={({ isActive }) => isActive ? "text-warning text-decoration-none" : "text-white text-decoration-none"}
                                 >Contact
                                 </NavLink>
                             </li>
