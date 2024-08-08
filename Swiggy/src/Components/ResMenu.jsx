@@ -48,7 +48,7 @@ const ResMenu = () => {
                 {
                     items.map(
                         (obj) => {
-                            return <ResMenuCard obj={obj} key={obj.card.info.id} />
+                            return <ResMenuCard obj={obj} key={obj?.card?.info?.id} />
                         }
                     )
                 }

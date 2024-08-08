@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
     // console.log(props);
-    console.log(props?.res?.info?.name + "  " + props?.res?.info?.id);
+    // console.log(props?.res?.info?.name + "  " + props?.res?.info?.id);
     const { id, name, cloudinaryImageId, areaName, avgRating, cuisines, costForTwo, sla } = props?.res?.info;
 
     return (
@@ -13,9 +13,9 @@ const Card = (props) => {
             <Link to={`/res/${id}`} className="d-flex justify-content-center w-100 mb-2">
                 <img
                     src={SWIGGY_CLOUDINARY_IMG + cloudinaryImageId}
-                    className="img-fluid" // Ensure the image is responsive
+                    className="img-fluid"
                     alt="res-img"
-                    style={{ width: "100%", height: "auto", aspectRatio: "4/3", objectFit: "cover" }} // Adjust aspect ratio as needed
+                    style={{ width: "100%", height: "auto", aspectRatio: "4/3", objectFit: "cover" }}
                 />
             </Link>
 
