@@ -20,8 +20,6 @@ const Body = () => {
         setFilteredList(allRes);
     }
 
-    console.log("Body rendered");
-
     return (
         <div className="container">
 
