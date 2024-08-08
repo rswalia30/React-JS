@@ -12,6 +12,13 @@ class About extends Component {
     // THREE : API call : useEffect() in Functional Components
     componentDidMount() {
         console.log("Parent componentDidMount")
+        // this.timer = setInterval(() => {
+        //     console.log("Mounting in About");
+        // }, 1000);
+    }
+
+    componentWillUnmount() {
+        // clearInterval(this.timer);
     }
 
     // TWO
