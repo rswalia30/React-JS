@@ -4,7 +4,7 @@ import { SWIGGY_CLOUDINARY_IMG } from "../constants/constants";
 
 const Card = (props) => {
     // console.log(props);
-    // console.log(props?.res?.info?.name);
+    // console.log(props?.res?.info?.name + "  " + props?.res?.info?.id);
     const { name, cloudinaryImageId, areaName, avgRating, cuisines, costForTwo, sla } = props?.res?.info;
 
     return (
@@ -13,7 +13,6 @@ const Card = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
                 <h6> {avgRating} stars • {sla?.slaString}</h6>
-
                 <p>{cuisines.join(", ")}</p>
                 <p>{areaName} • <b>{costForTwo}</b></p>
             </div>

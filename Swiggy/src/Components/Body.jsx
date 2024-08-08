@@ -14,15 +14,14 @@ const Body = () => {
         const data = await fetch(SWIGGY_API);
         const json = await data.json();
         // console.log(json);
-        // console.log(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants[0]?.info?.name);
-        const allRes = json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
+        // console.log(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants[0]?.info?.name);
+        const allRes = json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;     // check cards[3] / cards[4]
         setList(allRes);
         setFilteredList(allRes);
     }
 
     return (
         <div className="container">
-
             <div className="row mt-3">
                 {/* Search Functionallity */}
                 <div className="col-md-8">
