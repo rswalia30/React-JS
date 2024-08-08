@@ -48,7 +48,7 @@ const Body = () => {
                     <button
                         className="btn btn-success w-100"
                         onClick={() => {
-                            const filtered = filteredList.filter(
+                            const filtered = list.filter(
                                 (obj) => obj.info.avgRating >= 4.5
                             )
                             setFilteredList(filtered);
