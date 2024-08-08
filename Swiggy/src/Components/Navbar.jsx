@@ -55,7 +55,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="d-flex">
-                    <button className="btn btn-success mx-2"
+                    <button className="btn btn-danger mx-2"
                         onClick={() => {
                             (btnText === "Login") ? setBtnText("Logout") : setBtnText("Login");
                         }}

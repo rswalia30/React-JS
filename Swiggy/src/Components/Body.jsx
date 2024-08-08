@@ -1,9 +1,12 @@
 import Card from "./Card";
 import { useEffect, useState } from "react";
 import { SWIGGY_API } from "../constants/constants";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
     const [list, setList] = useState([]);
+    const [filteredList, setFilteredList] = useState(list);
+    const [searchText, setSearchText] = useState("");
 
     useEffect(() => { fetchJSONFromAPI() }, []);
 
@@ -14,10 +17,47 @@ const Body = () => {
         // console.log(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants[0]?.info?.name);
         const allRes = json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
         setList(allRes);
+        setFilteredList(allRes);
     }
+
+    console.log("Body rendered");
 
     return (
         <div className="container">
+
+            <div className="row mt-3">
+                {/* Search Functionallity */}
+                <div className="col-md-8">
+                    <input type="search"
+                        placeholder="Search Restaurants"
+                        className="form-control"
+                        // bind search filed with state variable
+                        value={searchText}
+                        onChange={(e) => { setSearchText(e.target.value) }}
+                        onKeyUp={() => {
+                            const filtered2 = list.filter(
+                                (obj) => obj?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+                            )
+                            setFilteredList(filtered2);
+                        }}
+                    />
+                </div>
+
+                {/* Top Rated Restaurants */}
+                <div className="col-md-4">
+                    <button
+                        className="btn btn-success w-100"
+                        onClick={() => {
+                            const filtered = filteredList.filter(
+                                (obj) => obj.info.avgRating >= 4.5
+                            )
+                            setFilteredList(filtered);
+                        }}
+                    >Top Rated Restaurants</button>
+                </div>
+            </div>
+
+            {/* Render Cards */}
             <div className="row">
                 {/* <Card obj={list[0]} /> */}
                 {/* <Card obj={list[1]} />
@@ -25,13 +65,14 @@ const Body = () => {
                 <Card obj={list[3]} /> */}
 
                 {
-                    list.map(
-                        (obj, index) => { return <Card res={obj} key={index} /> }
-                    )
-
+                    (filteredList.length === 0) ? <Shimmer /> :
+                        filteredList.map(
+                            // (obj, index) => { return <Card res={obj} key={index} /> }
+                            (obj) => { return <Card res={obj} key={obj?.info?.id} /> }
+                        )
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

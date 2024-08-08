@@ -8,7 +8,7 @@ const Card = (props) => {
     const { name, cloudinaryImageId, areaName, avgRating, cuisines, costForTwo, sla } = props?.res?.info;
 
     return (
-        <div className="card mt-3 bg-light col-md-3">
+        <div className="card bg-light col-md-3 mt-3">
             <img src={SWIGGY_CLOUDINARY_IMG + cloudinaryImageId} className="rounded-circle" alt="res-img" style={{ aspectRatio: "4/3" }} />
             <div className="card-body">
                 <h5 className="card-title">{name}</h5>
