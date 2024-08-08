@@ -9,8 +9,9 @@ const Card = (props) => {
     const { id, name, cloudinaryImageId, areaName, avgRating, cuisines, costForTwo, sla } = props?.res?.info;
 
     return (
+        // to={`/res/${id}`}
         <div className="card bg-light col-md-3 mt-3 d-flex flex-column">
-            <Link to={`/res/${id}`} className="d-flex justify-content-center w-100 mb-2">
+            <Link to={"/res/" + id} className="d-flex justify-content-center w-100 mb-2">
                 <img
                     src={SWIGGY_CLOUDINARY_IMG + cloudinaryImageId}
                     className="img-fluid"
