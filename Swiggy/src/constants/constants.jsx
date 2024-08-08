@@ -12,3 +12,7 @@ export const RES_MENU =
 
 export const RES_MENU_IMG =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/";
+
+export const GITHUB_USER_API =
+    "https://api.github.com/users/rswalia";
+// "https://api.github.com/users/akhil-aggarwal";
