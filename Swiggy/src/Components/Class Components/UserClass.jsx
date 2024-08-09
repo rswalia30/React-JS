@@ -1,5 +1,5 @@
 import React from "react";
-import { GITHUB_USER_API } from "../utils/constants";
+import { GITHUB_USER_API } from "../../utils/constants";
 
 class UserClass extends React.Component {
 

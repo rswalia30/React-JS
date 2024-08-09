@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
 import Body from './Components/Body.jsx'
-import About from './Components/About.jsx'
+import About from './Components/Class Components/About.jsx'
 import Contact from './Components/Contact.jsx'
 import Error from './Components/Error.jsx'
 import Post from './Components/Post.jsx'
