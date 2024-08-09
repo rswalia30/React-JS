@@ -2,8 +2,6 @@ import { RES_MENU_IMG } from "../utils/constants";
 
 const ResMenuCard = (props) => {
     // console.log(props);
-    // console.log(props?.obj?.card?.info?.name);
-
     const { imageId, name, price, defaultPrice, finalPrice } = props?.obj?.card?.info;
 
     return (

@@ -15,9 +15,8 @@ const ResMenu = () => {
     }
 
     const { name, costForTwoMessage } = resInfo?.cards[2]?.card?.card?.info;
-
     const { itemCards } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    // console.log(itemCards);
+    const { title } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
 
     return (
         <div className="container mt-3">
@@ -26,7 +25,7 @@ const ResMenu = () => {
             <h5 className="text-center">{costForTwoMessage}</h5>
 
             <div className="row">
-                <h3 className="bg-light">Recommended</h3>
+                <h3 className="bg-light">{title}</h3>
 
                 {/* <ResMenuCard obj={itemCards[0]} />
                 <ResMenuCard obj={itemCards[1]} />
