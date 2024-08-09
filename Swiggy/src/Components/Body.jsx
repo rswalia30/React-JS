@@ -1,7 +1,9 @@
 import Card from "./Card";
 import { useEffect, useState } from "react";
-import { SWIGGY_API } from "../constants/constants";
+import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
+
+
 
 const Body = () => {
     const [list, setList] = useState([]);

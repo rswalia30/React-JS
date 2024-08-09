@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unsafe-optional-chaining */
-import { SWIGGY_CLOUDINARY_IMG } from "../constants/constants";
+import { SWIGGY_CLOUDINARY_IMG } from "../utils/constants";
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
