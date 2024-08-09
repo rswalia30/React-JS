@@ -2,7 +2,7 @@
 import UserClass from "./UserClass";
 import { Component } from "react";
 
-class About extends Component {
+class Github extends Component {
     // ONE:  call
     constructor() {
         super();
@@ -37,4 +37,4 @@ class About extends Component {
     }
 }
 
-export default About;
+export default Github;

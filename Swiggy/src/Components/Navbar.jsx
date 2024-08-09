@@ -23,7 +23,7 @@ const Navbar = () => {
                 </Link>
 
                 {/* Links */}
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">/
                     <ul className="navbar-nav  mb-2 mb-lg-0">
                         <li className="nav-item mx-2">
                             <NavLink to="/"
@@ -35,12 +35,12 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li className="nav-item mx-2">
-                            <NavLink to="/about"
+                            <NavLink to="/github"
                                 className={({ isActive }) => {
                                     return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
                                 }}
                             >
-                                About
+                                Github
                             </NavLink>
                         </li>
                         <li className="nav-item mx-2">
