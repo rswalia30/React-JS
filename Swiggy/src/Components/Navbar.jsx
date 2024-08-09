@@ -1,6 +1,7 @@
 import { SWIGGY_LOGO } from "../utils/constants";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom"
+import useOnlineStatus from "../utils/useOnlineStatus";
 // import { useEffect } from "react";
 
 const Navbar = () => {
@@ -11,6 +12,8 @@ const Navbar = () => {
     // useEffect(() => { console.log("useEffect called") }, [btnText])
 
     // console.log("Navbar render");
+
+    const onlineStatus = useOnlineStatus();
 
     return (
         <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "#e3f2fd" }}>
@@ -59,6 +62,9 @@ const Navbar = () => {
                             (btnText === "Login") ? setBtnText("Logout") : setBtnText("Login");
                         }}
                     >{btnText}</button>
+
+                    <h5>Online Status : {onlineStatus ? "🟢" : "🔴"} </h5>
+
                 </div>
 
 

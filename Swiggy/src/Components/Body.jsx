@@ -2,6 +2,7 @@ import Card from "./Card";
 import { useEffect, useState } from "react";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [list, setList] = useState([]);
@@ -15,9 +16,15 @@ const Body = () => {
         const json = await data.json();
         // console.log(json);
         // console.log(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants[0]?.info?.name);
-        const allRes = json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;     // check cards[3] / cards[4]
+        const allRes = json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;     // check cards[3] / cards[4]
         setList(allRes);
         setFilteredList(allRes);
+    }
+
+    const onlineStatus = useOnlineStatus();
+
+    if (onlineStatus === false) {
+        return <h1>You are currently offline !!!</h1>
     }
 
     return (
