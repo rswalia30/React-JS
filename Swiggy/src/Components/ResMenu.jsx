@@ -1,4 +1,3 @@
-/* eslint-disable no-unsafe-optional-chaining */
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
 import useResMenu from "../utils/useResMenu";

@@ -1,5 +1,3 @@
-/* eslint-disable no-unsafe-optional-chaining */
-/* eslint-disable react/prop-types */
 import { RES_MENU_IMG } from "../utils/constants";
 
 const ResMenuCard = (props) => {

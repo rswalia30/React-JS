@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import { GITHUB_USER_API } from "../utils/constants";
 

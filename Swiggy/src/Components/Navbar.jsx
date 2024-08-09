@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
 import { SWIGGY_LOGO } from "../utils/constants";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom"
