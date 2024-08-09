@@ -7,8 +7,9 @@ import ResMenuCard from "./ResMenuCard";
 const ResMenu = () => {
     const { resid } = useParams();
 
-    const resInfo = useResMenu(resid);  // Fetching data from API
-    console.log(resInfo);
+    // Fetching data from API
+    const resInfo = useResMenu(resid);
+    // console.log(resInfo);
 
     if (resInfo === null) {
         return <Shimmer />;
@@ -35,8 +36,8 @@ const ResMenu = () => {
 
                 {
                     itemCards.map(
-                        (obj, index) => {
-                            return <ResMenuCard obj={obj} key={index} />
+                        (obj) => {
+                            return <ResMenuCard obj={obj} key={obj.card.info.id} />
                         }
                     )
                 }
