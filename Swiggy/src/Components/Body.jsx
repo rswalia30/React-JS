@@ -28,8 +28,13 @@ const Body = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container ">
             <div className="row mt-3">
+
+                <h1 className="text-3xl font-bold underline">
+                    Hello world
+                </h1>
+
                 {/* Search Functionallity */}
                 <div className="col-md-8">
                     <input type="search"
