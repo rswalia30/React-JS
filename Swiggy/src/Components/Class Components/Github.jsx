@@ -27,7 +27,7 @@ class Github extends Component {
 
         return (
             <div className="container">
-                <h1 className="text-center">This is About Component</h1>
+                <h1 className="text-center">This is Github Component</h1>
                 {/* <User name={"Rohit Function"} location={"Amritsar"} /> */}
                 <UserClass name={"First"} location={"India"} />
                 {/* <UserClass name={"Second"} location={"Amritsar"} />
