@@ -16,64 +16,57 @@ const Navbar = () => {
     const onlineStatus = useOnlineStatus();
 
     return (
-        <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "#e3f2fd" }}>
-            <div className="container-fluid">
+        <nav className="bg-purple-200 flex justify-between h-20 items-center">
+            {/* Logo */}
+            <div>
                 <Link to="/">
-                    <img src={SWIGGY_LOGO} alt="" width="auto" height="24" />
+                    <img src={SWIGGY_LOGO} alt="" />
                 </Link>
-
-                {/* Links */}
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">/
-                    <ul className="navbar-nav  mb-2 mb-lg-0">
-                        <li className="nav-item mx-2">
-                            <NavLink to="/"
-                                className={({ isActive }) => {
-                                    return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
-                                }}
-                            >
-                                Home
-                            </NavLink>
-                        </li>
-                        <li className="nav-item mx-2">
-                            <NavLink to="/github"
-                                className={({ isActive }) => {
-                                    return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
-                                }}
-                            >
-                                Github
-                            </NavLink>
-                        </li>
-                        <li className="nav-item mx-2">
-                            <NavLink to="/contact"
-                                className={({ isActive }) => {
-                                    return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
-                                }}
-                            >
-                                Contact
-                            </NavLink>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div className="d-flex">
-                    <button className="btn btn-danger mx-2"
-                        onClick={() => {
-                            (btnText === "Login") ? setBtnText("Logout") : setBtnText("Login");
-                        }}
-                    >{btnText}</button>
-
-                    <h5>Online Status : {onlineStatus ? "🟢" : "🔴"} </h5>
-
-                </div>
-
-
-                <button className="navbar-toggler bg-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+            </div>
+            {/* Links */}
+            <div>
+                <ul className="flex">
+                    <li className="mx-2">
+                        <NavLink to="/"
+                            className={({ isActive }) => {
+                                return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
+                            }}
+                        >
+                            Home
+                        </NavLink>
+                    </li>
+                    <li className="mx-2">
+                        <NavLink to="/github"
+                            className={({ isActive }) => {
+                                return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
+                            }}
+                        >
+                            Github
+                        </NavLink>
+                    </li>
+                    <li className="mx-2">
+                        <NavLink to="/contact"
+                            className={({ isActive }) => {
+                                return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
+                            }}
+                        >
+                            Contact
+                        </NavLink>
+                    </li>
+                    <li className="mx-2">
+                        <button
+                            className="text-white bg-blue-700 p-2 hover:bg-blue-800"
+                            onClick={() => {
+                                (btnText === "Login") ? setBtnText("Logout") : setBtnText("Login");
+                            }}
+                        >{btnText}</button>
+                    </li>
+                    <li className="mx-2">
+                        <h5 className="my-auto">Online Status : {onlineStatus ? "🟢" : "🔴"} </h5>
+                    </li>
+                </ul>
             </div>
         </nav >
-
     )
 }
 

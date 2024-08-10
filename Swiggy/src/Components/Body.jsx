@@ -16,7 +16,7 @@ const Body = () => {
         const json = await data.json();
         // console.log(json);
         // console.log(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants[0]?.info?.name);
-        const allRes = json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;     // check cards[3] / cards[4]
+        const allRes = json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;     // check cards[3] / cards[4]
         setList(allRes);
         setFilteredList(allRes);
     }
@@ -28,18 +28,14 @@ const Body = () => {
     }
 
     return (
-        <div className="container ">
-            <div className="row mt-3">
-
-                <h1 className="text-3xl font-bold underline">
-                    Tailwind CSS
-                </h1>
+        <div className=" ">
+            <div className="flex my-4 justify-between">
 
                 {/* Search Functionallity */}
-                <div className="col-md-8">
+                <div>
                     <input type="search"
                         placeholder="Search Restaurants"
-                        className="form-control"
+                        className="mx-2 p-4 text-sm text-gray-900 border border-gray-800 rounded-lg bg-gray-50 "
                         // bind search filed with state variable
                         value={searchText}
                         onChange={(e) => { setSearchText(e.target.value) }}
@@ -53,9 +49,9 @@ const Body = () => {
                 </div>
 
                 {/* Top Rated Restaurants */}
-                <div className="col-md-4">
+                <div>
                     <button
-                        className="btn btn-success w-100"
+                        className="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                         onClick={() => {
                             const filtered = list.filter(
                                 (obj) => obj.info.avgRating >= 4.5
@@ -67,7 +63,7 @@ const Body = () => {
             </div>
 
             {/* Render Cards */}
-            <div className="row">
+            <div className="flex flex-wrap">
                 {/* <Card obj={list[0]} /> */}
                 {/* <Card obj={list[1]} />
                 <Card obj={list[2]} />

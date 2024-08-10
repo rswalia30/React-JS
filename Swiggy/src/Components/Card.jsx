@@ -8,20 +8,20 @@ const Card = (props) => {
 
     return (
         // to={`/res/${id}`}
-        <div className="card bg-light col-md-3 mt-3 d-flex flex-column">
+        <div className="m-4 p-4 w-[200px] bg-indigo-50">
             <Link to={"/res/" + id} className="d-flex justify-content-center w-100 mb-2">
                 <img
                     src={SWIGGY_CLOUDINARY_IMG + cloudinaryImageId}
-                    className="img-fluid"
+                    className="rounded-lg mb-3"
                     alt="res-img"
                     style={{ width: "100%", height: "auto", aspectRatio: "4/3", objectFit: "cover" }}
                 />
             </Link>
 
             <div className="card-body">
-                <h5 className="card-title">{name}</h5>
-                <h6>{avgRating} stars • {sla?.slaString}</h6>
-                <p>{cuisines.join(", ")}</p>
+                <h5 className="font-bold font-serif">{name}</h5>
+                <h6 className="font-semibold">{avgRating} stars • {sla?.slaString}</h6>
+                <p className="font-light">{cuisines.join(", ")}</p>
                 <p>{areaName} • <b>{costForTwo}</b></p>
             </div>
         </div>
