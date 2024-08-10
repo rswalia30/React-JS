@@ -16,7 +16,7 @@ const Body = () => {
         const json = await data.json();
         // console.log(json);
         // console.log(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants[0]?.info?.name);
-        const allRes = json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;     // check cards[3] / cards[4]
+        const allRes = json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;     // check cards[3] / cards[4]
         setList(allRes);
         setFilteredList(allRes);
     }
@@ -32,7 +32,7 @@ const Body = () => {
             <div className="row mt-3">
 
                 <h1 className="text-3xl font-bold underline">
-                    Hello world
+                    Tailwind CSS
                 </h1>
 
                 {/* Search Functionallity */}
