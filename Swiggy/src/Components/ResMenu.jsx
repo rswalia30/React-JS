@@ -8,7 +8,7 @@ const ResMenu = () => {
 
     // Fetching data from API
     const resInfo = useResMenu(resid);
-    console.log(resInfo);
+    // console.log(resInfo);
 
     if (resInfo === null) {
         return <Shimmer />;

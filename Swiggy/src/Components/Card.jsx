@@ -3,17 +3,16 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
     // console.log(props);
-    const { id, name, cloudinaryImageId, areaName, avgRating, cuisines, costForTwo, sla } = props?.res?.info || "";
+    const { id, name, cloudinaryImageId, areaName, avgRating, cuisines, costForTwo, sla, promoted } = props?.res?.info || "Rohit";
 
     return (
         // to={`/res/${id}`}
-        <div className="m-4 p-4 w-[250px] bg-red-100 hover:bg-red-200">
+        <div className="m-4 p-4 w-[280px] bg-red-100 hover:bg-red-200">
             <Link to={"/res/" + id} className="d-flex justify-content-center w-100 mb-2">
                 <img
                     src={SWIGGY_CLOUDINARY_IMG + cloudinaryImageId}
-                    className="rounded-lg mb-3"
+                    className="rounded-xl mb-3 object-center w-60 h-60"
                     alt="res-img"
-                    style={{ width: "100%", height: "auto", aspectRatio: "4/3", objectFit: "cover" }}
                 />
             </Link>
 
@@ -22,6 +21,7 @@ const Card = (props) => {
                 <h6 className="font-semibold">{avgRating} stars • {sla?.slaString}</h6>
                 <p className="font-light">{cuisines.join(", ")}</p>
                 <p>{areaName} • <b>{costForTwo}</b></p>
+                <p>{promoted}Hi</p>
             </div>
         </div>
     )

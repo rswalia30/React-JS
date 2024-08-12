@@ -29,7 +29,7 @@ const Navbar = () => {
                     <li className="mx-2">
                         <NavLink to="/"
                             className={({ isActive }) => {
-                                return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
+                                return isActive ? "text-orange-400" : "text-black";
                             }}
                         >
                             Home
@@ -38,7 +38,7 @@ const Navbar = () => {
                     <li className="mx-2">
                         <NavLink to="/github"
                             className={({ isActive }) => {
-                                return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
+                                return isActive ? "text-orange-400" : "text-black";
                             }}
                         >
                             Github
@@ -47,12 +47,22 @@ const Navbar = () => {
                     <li className="mx-2">
                         <NavLink to="/contact"
                             className={({ isActive }) => {
-                                return isActive ? "text-danger text-decoration-none" : "text-dark text-decoration-none";
+                                return isActive ? "text-orange-400" : "text-black";
                             }}
                         >
                             Contact
                         </NavLink>
                     </li>
+                    <li className="mx-2 text-xl font-serif bg-green-200 p-2">
+                        <NavLink to="/instamart"
+                            className={({ isActive }) => {
+                                return isActive ? "text-orange-400" : "text-black";
+                            }}
+                        >
+                            InstaMart
+                        </NavLink>
+                    </li>
+
                     <li className="mx-2">
                         <button
                             className="text-white bg-blue-700 p-2 hover:bg-blue-800"

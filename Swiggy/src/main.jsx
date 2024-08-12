@@ -8,10 +8,12 @@ import Error from './Components/Error.jsx'
 import Post from './Components/Post.jsx'
 import ResMenu from './Components/ResMenu.jsx'
 // import Github from './Components/Class Components/Github.jsx'
+// import Instamart from './Components/Instamart/Instamart.jsx'
 import { lazy, Suspense } from 'react'
 import Shimmer from './Components/Shimmer.jsx'
 
 const Github = lazy(() => import("./Components/Class Components/Github.jsx"));
+const Instamart = lazy(() => import("./Components/Instamart/Instamart.jsx"));
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +31,13 @@ const router = createBrowserRouter(
       < Route path="/contact" element={< Contact />} />
       < Route path="/post/:postid" element={< Post />} />
       < Route path="/res/:resid" element={< ResMenu />} />
+      < Route path="/instamart"
+        element=
+        {
+          <Suspense fallback={<Shimmer />}>
+            < Instamart />
+          </Suspense>
+        } />
     </Route >
   )
 )
