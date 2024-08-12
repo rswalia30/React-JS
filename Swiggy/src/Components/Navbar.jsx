@@ -1,7 +1,8 @@
 import { SWIGGY_LOGO } from "../utils/constants";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 // import { useEffect } from "react";
 
 const Navbar = () => {
@@ -15,6 +16,8 @@ const Navbar = () => {
 
     const onlineStatus = useOnlineStatus();
 
+    const { user } = useContext(UserContext);
+
     return (
         <nav className="bg-purple-200 flex justify-between h-20 items-center">
             {/* Logo */}
@@ -22,6 +25,7 @@ const Navbar = () => {
                 <Link to="/">
                     <img src={SWIGGY_LOGO} alt="" />
                 </Link>
+                <h1>{user.name} - {user.email}</h1>
             </div>
             {/* Links */}
             <div>

@@ -1,13 +1,15 @@
 import Card from "./Card";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
     const [list, setList] = useState([]);
     const [filteredList, setFilteredList] = useState(list);
     const [searchText, setSearchText] = useState("");
+    const { user, setUser } = useContext(UserContext);
 
     useEffect(() => { fetchJSONFromAPI() }, []);
 
@@ -56,6 +58,26 @@ const Body = () => {
                         onKeyUp={handleSearch}
                     />
                 </div>
+
+                <input type="text"
+                    placeholder="Name"
+                    className="mx-2 p-4 text-sm text-gray-900 border border-gray-800 rounded-lg bg-gray-50 "
+                    value={user.name}
+                    onChange={(e) => setUser({
+                        ...user,
+                        name: e.target.value,
+                    })}
+                />
+
+                <input type="text"
+                    placeholder="Email"
+                    className="mx-2 p-4 text-sm text-gray-900 border border-gray-800 rounded-lg bg-gray-50 "
+                    value={user.email}
+                    onChange={(e) => setUser({
+                        ...user,
+                        email: e.target.value,
+                    })}
+                />
 
                 {/* Top Rated Restaurants */}
                 <div>

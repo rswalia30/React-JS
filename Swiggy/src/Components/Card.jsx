@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { SWIGGY_CLOUDINARY_IMG } from "../utils/constants";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Card = (props) => {
     // console.log(props);
     const { id, name, cloudinaryImageId, areaName, avgRating, cuisines, costForTwo, sla, promoted } = props?.res?.info || "Rohit";
+
+    const { user } = useContext(UserContext);
 
     return (
         // to={`/res/${id}`}
@@ -22,6 +26,7 @@ const Card = (props) => {
                 <p className="font-light">{cuisines.join(", ")}</p>
                 <p>{areaName} • <b>{costForTwo}</b></p>
                 <p>{promoted}Hi</p>
+                <p className="font-serif">{user.name} - {user.email}</p>
             </div>
         </div>
     )
