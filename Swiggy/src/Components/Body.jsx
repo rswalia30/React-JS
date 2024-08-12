@@ -16,19 +16,33 @@ const Body = () => {
         const json = await data.json();
         // console.log(json);
         // console.log(json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants[0]?.info?.name);
-        const allRes = json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;     // check cards[3] / cards[4]
+        const allRes = json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;     // check cards[3] / cards[4]
         setList(allRes);
         setFilteredList(allRes);
     }
 
     const onlineStatus = useOnlineStatus();
 
+    const handleTopRated = () => {
+        const filtered = list.filter(
+            (obj) => obj.info.avgRating >= 4.5
+        )
+        setFilteredList(filtered);
+    }
+
+    const handleSearch = () => {
+        const filtered2 = list.filter(
+            (obj) => obj?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+        )
+        setFilteredList(filtered2);
+    }
+
     if (onlineStatus === false) {
         return <h1>You are currently offline !!!</h1>
     }
 
     return (
-        <div className=" ">
+        <>
             <div className="flex my-4 justify-between">
 
                 {/* Search Functionallity */}
@@ -39,12 +53,7 @@ const Body = () => {
                         // bind search filed with state variable
                         value={searchText}
                         onChange={(e) => { setSearchText(e.target.value) }}
-                        onKeyUp={() => {
-                            const filtered2 = list.filter(
-                                (obj) => obj?.info?.name.toLowerCase().includes(searchText.toLowerCase())
-                            )
-                            setFilteredList(filtered2);
-                        }}
+                        onKeyUp={handleSearch}
                     />
                 </div>
 
@@ -52,12 +61,7 @@ const Body = () => {
                 <div>
                     <button
                         className="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                        onClick={() => {
-                            const filtered = list.filter(
-                                (obj) => obj.info.avgRating >= 4.5
-                            )
-                            setFilteredList(filtered);
-                        }}
+                        onClick={handleTopRated}
                     >Top Rated Restaurants</button>
                 </div>
             </div>
@@ -72,12 +76,11 @@ const Body = () => {
                 {
                     (filteredList.length === 0) ? <Shimmer /> :
                         filteredList.map(
-                            // (obj, index) => { return <Card res={obj} key={index} /> }
                             (obj) => { return <Card res={obj} key={obj?.info?.id} /> }
                         )
                 }
             </div>
-        </div >
+        </>
     )
 }
 

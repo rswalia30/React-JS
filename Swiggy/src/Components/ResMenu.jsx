@@ -8,25 +8,25 @@ const ResMenu = () => {
 
     // Fetching data from API
     const resInfo = useResMenu(resid);
-    // console.log(resInfo);
+    console.log(resInfo);
 
     if (resInfo === null) {
         return <Shimmer />;
     }
 
-    const { name, costForTwoMessage } = resInfo?.cards[2]?.card?.card?.info;
-    const { itemCards } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    const { title } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+    const { name, costForTwoMessage } = resInfo?.cards[2]?.card?.card?.info || "";
+    const { itemCards } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card || [];
+    const { title } = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card || "";
 
     return (
-        <div className="container mt-3">
-            <h1 className="text-center">{name} Menu</h1>
-            <h3 className="text-center">Res ID = {resid}</h3>
-            <h5 className="text-center">{costForTwoMessage}</h5>
+        <div className="mt-3">
+            <h1 className="text-center text-3xl font-bold font-serif">{name} Menu</h1>
+            <h3 className="text-center font-thin">Res ID = {resid}</h3>
+            <h5 className="text-center font-semibold">{costForTwoMessage}</h5>
 
-            <div className="row">
-                <h3 className="bg-light">{title}</h3>
+            <h3 className="bg-slate-100 p-2 font-semibold">{title}</h3>
 
+            <div className="flex flex-wrap">
                 {/* <ResMenuCard obj={itemCards[0]} />
                 <ResMenuCard obj={itemCards[1]} />
                 <ResMenuCard obj={itemCards[2]} />

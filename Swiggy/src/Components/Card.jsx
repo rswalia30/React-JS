@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
     // console.log(props);
-    // console.log(props?.res?.info?.name + "  " + props?.res?.info?.id);
-    const { id, name, cloudinaryImageId, areaName, avgRating, cuisines, costForTwo, sla } = props?.res?.info;
+    const { id, name, cloudinaryImageId, areaName, avgRating, cuisines, costForTwo, sla } = props?.res?.info || "";
 
     return (
         // to={`/res/${id}`}
-        <div className="m-4 p-4 w-[200px] bg-indigo-50">
+        <div className="m-4 p-4 w-[250px] bg-red-100 hover:bg-red-200">
             <Link to={"/res/" + id} className="d-flex justify-content-center w-100 mb-2">
                 <img
                     src={SWIGGY_CLOUDINARY_IMG + cloudinaryImageId}
