@@ -8,7 +8,7 @@ const ResMenu = () => {
 
     // Fetching data from API
     const resInfo = useResMenu(resid);
-    // console.log(resInfo);
+    console.log(resInfo);
 
     if (resInfo === null) {
         return <Shimmer />;
@@ -26,7 +26,7 @@ const ResMenu = () => {
 
             <h3 className="bg-slate-100 p-2 font-semibold">{title}</h3>
 
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap justify-center">
                 {/* <ResMenuCard obj={itemCards[0]} />
                 <ResMenuCard obj={itemCards[1]} />
                 <ResMenuCard obj={itemCards[2]} />

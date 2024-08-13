@@ -89,7 +89,7 @@ const Body = () => {
             </div>
 
             {/* Render Cards */}
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap justify-center">
                 {/* <Card obj={list[0]} /> */}
                 {/* <Card obj={list[1]} />
                 <Card obj={list[2]} />
