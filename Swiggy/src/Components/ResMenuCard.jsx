@@ -1,17 +1,28 @@
 import { RES_MENU_IMG } from "../utils/constants";
 
 const ResMenuCard = (props) => {
-    // console.log(props);
-    const { imageId, name, price, defaultPrice, finalPrice } = props?.obj?.card?.info || "";
+    console.log(props);
+    const { imageId, name, description, price, defaultPrice, finalPrice } = props?.obj?.card?.info || "";
 
     return (
-        <div className="">
-            <div className="m-3 p-3 w-[250px] bg-red-100 hover:bg-red-200">
-                <img src={RES_MENU_IMG + imageId} alt="card-img" className="w-44 h-44 rounded-lg" />
-                <h5 className="font-serif">{name}</h5>
-                <p className="font-serif"> &#8377; {price / 100 || defaultPrice / 100 || finalPrice / 100}</p>
+        <>
+
+            <div className="flex border-b-2 border-gray-400 mb-4">
+                <div className="w-9/12">
+                    <h5 className="font-sans text-lg">{name}</h5>
+                    <p className=""> &#8377; {price / 100 || defaultPrice / 100 || finalPrice / 100}</p>
+                    <p className="font-light mt-3">{description}</p>
+                    <button className="bg-white text-green-600 p-2 mt-3 rounded-lg font-semibold text-xl">Add +</button>
+                </div>
+
+                <div className="w-3/12">
+                    <img src={RES_MENU_IMG + imageId}
+                        alt="card-img"
+                        className="rounded-3xl w-[500px] p-3 h-auto object-contain" />
+                </div>
             </div>
-        </div>
+
+        </>
     )
 }
 
