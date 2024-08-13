@@ -1,7 +1,7 @@
 import { RES_MENU_IMG } from "../utils/constants";
 
 const ResMenuCard = (props) => {
-    console.log(props);
+    // console.log(props);
     const { imageId, name, description, price, defaultPrice, finalPrice } = props?.obj?.card?.info || "";
 
     return (
@@ -12,13 +12,14 @@ const ResMenuCard = (props) => {
                     <h5 className="font-sans text-lg">{name}</h5>
                     <p className=""> &#8377; {price / 100 || defaultPrice / 100 || finalPrice / 100}</p>
                     <p className="font-light mt-3">{description}</p>
-                    <button className="bg-white text-green-600 p-2 mt-3 rounded-lg font-semibold text-xl">Add +</button>
+                    <button className="bg-white text-green-600 p-2 my-3 rounded-lg font-semibold text-xl shadow-2xl">Add +</button>
                 </div>
 
                 <div className="w-3/12">
                     <img src={RES_MENU_IMG + imageId}
                         alt="card-img"
-                        className="rounded-3xl w-[500px] p-3 h-auto object-contain" />
+                        className="rounded-3xl w-[500px] p-3 h-auto object-contain shadow-sm"
+                    />
                 </div>
             </div>
 
