@@ -11,6 +11,7 @@ import ResMenu from './Components/ResMenu.jsx'
 // import Instamart from './Components/Instamart/Instamart.jsx'
 import { lazy, Suspense } from 'react'
 import Shimmer from './Components/Shimmer.jsx'
+import Cart from './Components/Cart.jsx'
 
 const Github = lazy(() => import("./Components/Class Components/Github.jsx"));
 const Instamart = lazy(() => import("./Components/Instamart/Instamart.jsx"));
@@ -38,6 +39,7 @@ const router = createBrowserRouter(
             < Instamart />
           </Suspense>
         } />
+      < Route path="/cart" element={< Cart />} />
     </Route >
   )
 )

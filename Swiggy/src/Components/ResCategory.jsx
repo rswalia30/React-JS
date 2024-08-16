@@ -30,7 +30,7 @@ const ResCategory = (props) => {
                     {
                         isVisible && itemCards.map(
                             (obj) => {
-                                return <ResMenuCard obj={obj} key={obj.card.info.id} />
+                                return <ResMenuCard obj={obj?.card?.info} key={obj.card.info.id} />
                             }
                         )
                     }

@@ -21,7 +21,7 @@ const Navbar = () => {
 
     // Subscribing to store(slice)
     const cartItems = useSelector((store) => store.cart.items)
-    console.log(cartItems);
+    // console.log(cartItems);
 
     return (
         <nav className="bg-purple-200 flex justify-between h-20 items-center">
@@ -85,8 +85,10 @@ const Navbar = () => {
                     </li>
 
                     <li className="mx-2 bg-green-300 p-2">
-                        <p className="text-xl font-semibold">🛒Cart</p>
-                        <p className="text-2xl font-bold">{cartItems.length} items</p>
+                        <Link to="/cart">
+                            <p className="text-xl font-semibold">🛒Cart</p>
+                            <p className="text-2xl font-bold">{cartItems.length} items</p>
+                        </Link>
                     </li>
 
                     <li className="mx-2">

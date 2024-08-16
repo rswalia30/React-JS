@@ -4,12 +4,12 @@ import { addItem } from "../utils/cartSlice";
 
 const ResMenuCard = (props) => {
     // console.log(props);
-    const { imageId, name, description, price, defaultPrice, finalPrice } = props?.obj?.card?.info || "";
+    const { imageId, name, description, price, defaultPrice, finalPrice } = props.obj;
 
     const dispatch = useDispatch();
     const handleAddBtn = () => {
         // Dispatch an action
-        dispatch(addItem(props?.obj?.card?.info))
+        dispatch(addItem(props.obj))
     }
 
     return (
