@@ -4,6 +4,8 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import { Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext";
+import appStore from "./utils/appStore";
+import { Provider } from "react-redux";
 
 const App = () => {
 
@@ -13,7 +15,7 @@ const App = () => {
   });
 
   return (
-    <>
+    <Provider store={appStore}>
       <UserContext.Provider value={
         {
           user: userInfo,
@@ -29,7 +31,7 @@ const App = () => {
         <Outlet />
         <Footer />
       </UserContext.Provider >
-    </>
+    </Provider>
   )
 }
 

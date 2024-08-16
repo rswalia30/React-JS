@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import { Link, NavLink } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 // import { useEffect } from "react";
 
 const Navbar = () => {
@@ -17,6 +18,10 @@ const Navbar = () => {
     const onlineStatus = useOnlineStatus();
 
     const { user } = useContext(UserContext);
+
+    // Subscribing to store(slice)
+    const cartItems = useSelector((store) => store.cart.items)
+    console.log(cartItems);
 
     return (
         <nav className="bg-purple-200 flex justify-between h-20 items-center">
@@ -39,6 +44,7 @@ const Navbar = () => {
                             Home
                         </NavLink>
                     </li>
+
                     <li className="mx-2">
                         <NavLink to="/github"
                             className={({ isActive }) => {
@@ -48,6 +54,7 @@ const Navbar = () => {
                             Github
                         </NavLink>
                     </li>
+
                     <li className="mx-2">
                         <NavLink to="/contact"
                             className={({ isActive }) => {
@@ -57,6 +64,7 @@ const Navbar = () => {
                             Contact
                         </NavLink>
                     </li>
+
                     <li className="mx-2 text-xl font-serif bg-green-200 p-2">
                         <NavLink to="/instamart"
                             className={({ isActive }) => {
@@ -75,6 +83,12 @@ const Navbar = () => {
                             }}
                         >{btnText}</button>
                     </li>
+
+                    <li className="mx-2 bg-green-300 p-2">
+                        <p className="text-xl font-semibold">🛒Cart</p>
+                        <p className="text-2xl font-bold">{cartItems.length} items</p>
+                    </li>
+
                     <li className="mx-2">
                         <h5 className="my-auto">Online Status : {onlineStatus ? "🟢" : "🔴"} </h5>
                     </li>
